@@ -20,12 +20,12 @@ class GeneralCommands(commands.Cog):
         self.bot = bot
         self.start_time = datetime.utcnow()
     
-    @commands.command(name="help")
+    @commands.command(name="commands")
     async def help_command(self, ctx, command=None):
         """
         Display help information for commands.
         
-        Usage: !help [command]
+        Usage: !commands [command]
         """
         prefix = Config.get_command_prefix()
         
@@ -54,7 +54,7 @@ class GeneralCommands(commands.Cog):
             # Show general help
             embed = discord.Embed(
                 title="Bot Help",
-                description=f"Here are the available commands. Use `{prefix}help [command]` for more info on a command.",
+                description=f"Here are the available commands. Use `{prefix}commands [command]` for more info on a command.",
                 color=discord.Color.blue()
             )
             
@@ -75,7 +75,7 @@ class GeneralCommands(commands.Cog):
                 command_list = ", ".join(f"`{prefix}{cmd.name}`" for cmd in cmds)
                 embed.add_field(name=cog_name, value=command_list, inline=False)
             
-            embed.set_footer(text=f"Bot Version: 1.0.0 | Use {prefix}help [command] for more details")
+            embed.set_footer(text=f"Bot Version: 1.0.0 | Use {prefix}commands [command] for more details")
             
             await ctx.send(embed=embed)
     
