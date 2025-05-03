@@ -136,8 +136,10 @@ class GeneralCommands(commands.Cog):
             add_reactions=True
         )
         
+        # Use the configured client ID if available, otherwise fallback to the bot user ID
+        client_id = Config.get_client_id() or str(self.bot.user.id)
         invite_url = discord.utils.oauth_url(
-            client_id=str(self.bot.user.id),
+            client_id=client_id,
             permissions=permissions
         )
         

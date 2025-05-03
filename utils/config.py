@@ -13,6 +13,7 @@ class Config:
     # Default values
     _DEFAULT_PREFIX = "!"
     _DEFAULT_BOT_NAME = "AI Assistant"
+    _DEFAULT_CLIENT_ID = None
     
     @staticmethod
     def get_discord_token() -> Optional[str]:
@@ -89,3 +90,16 @@ class Config:
             bool: True if in production mode, False otherwise
         """
         return os.environ.get("ENVIRONMENT", "development").lower() == "production"
+        
+    @staticmethod
+    def get_client_id() -> Optional[str]:
+        """
+        Get the Discord client ID from environment variables.
+        
+        Returns:
+            str: The Discord client ID or None if not found
+        """
+        client_id = os.environ.get("DISCORD_CLIENT_ID")
+        if not client_id:
+            logger.warning("DISCORD_CLIENT_ID not found in environment variables")
+        return client_id
