@@ -1,5 +1,5 @@
 """
-AI-related commands for the Discord bot using OpenAI.
+AI-related commands for the Discord bot using Google AI Studio.
 """
 import discord
 from discord.ext import commands
@@ -8,7 +8,7 @@ import asyncio
 import re
 from datetime import datetime
 
-from utils.openai_helper import generate_ai_response, generate_image
+from utils.google_ai_helper import generate_ai_response, generate_image
 from utils.config import Config
 from models import Conversation, Server
 from app import db
@@ -85,6 +85,15 @@ class AICommands(commands.Cog):
                     embed.set_image(url=result["url"])
                     embed.set_footer(text=f"Requested by {ctx.author.name}")
                     
+                    await ctx.send(embed=embed)
+                elif result and "error" in result:
+                    # Display the error message
+                    embed = discord.Embed(
+                        title="Image Generation",
+                        description=result["error"],
+                        color=discord.Color.gold()
+                    )
+                    embed.set_footer(text="Using Google AI Studio")
                     await ctx.send(embed=embed)
                 else:
                     await ctx.send("Failed to generate the image. Please try again with a different prompt.")

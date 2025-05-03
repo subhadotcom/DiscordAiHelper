@@ -29,6 +29,19 @@ class Config:
         return token
     
     @staticmethod
+    def get_google_api_key() -> Optional[str]:
+        """
+        Get the Google AI API key from environment variables.
+        
+        Returns:
+            str: The Google AI API key or None if not found
+        """
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            logger.warning("GOOGLE_API_KEY not found in environment variables")
+        return api_key
+    
+    @staticmethod
     def get_openai_api_key() -> Optional[str]:
         """
         Get the OpenAI API key from environment variables.
