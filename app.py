@@ -6,6 +6,7 @@ import os
 import logging
 
 from flask import Flask, render_template, jsonify, request, redirect, url_for, flash, session
+from utils.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -53,7 +54,8 @@ def load_user(user_id):
 @app.route('/')
 def index():
     """Render the homepage."""
-    return render_template('index.html')
+    client_id = Config.get_client_id()
+    return render_template('index.html', client_id=client_id)
 
 @app.route('/dashboard')
 @login_required
@@ -94,6 +96,31 @@ def login():
         
         flash('Invalid username or password')
     return render_template('login.html')
+
+@app.route('/discord_login')
+def discord_login():
+    """Handle Discord OAuth2 login."""
+    client_id = os.environ.get("DISCORD_CLIENT_ID")
+    if not client_id:
+        flash("Discord login is not configured correctly", "error")
+        return redirect(url_for('login'))
+    
+    # Redirect to Discord OAuth2 page
+    # Use HTTPS for production, HTTP for development
+    redirect_uri = url_for('discord_callback', _external=True)
+    if app.config.get('ENV') == 'production':
+        redirect_uri = redirect_uri.replace('http://', 'https://')
+    
+    oauth_url = f"https://discord.com/api/oauth2/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope=identify%20email"
+    return redirect(oauth_url)
+
+@app.route('/discord_callback')
+def discord_callback():
+    """Handle Discord OAuth2 callback."""
+    # This is a simplified placeholder for the Discord callback
+    # In a full implementation, you would exchange the code for a token and fetch user data
+    flash("Discord authentication not fully implemented yet", "warning")
+    return redirect(url_for('login'))
 
 @app.route('/logout')
 @login_required
