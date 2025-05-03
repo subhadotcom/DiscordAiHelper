@@ -1,0 +1,117 @@
+/* Main CSS for Discord AI Bot */
+
+/* Custom styling for chat example */
+.chat-example {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--bs-gray-700);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--bs-gray-900);
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.user-message {
+    background-color: var(--bs-primary-bg-subtle);
+    margin-right: 25px;
+}
+
+.bot-message {
+    background-color: var(--bs-gray-800);
+    margin-left: 25px;
+}
+
+/* Server icon placeholder */
+.server-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+/* Social icons styling */
+.social-icons a {
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Dashboard styles */
+.nav-pills .nav-link {
+    color: var(--bs-body-color);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+/* Typography adjustments */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.lead {
+    font-weight: 400;
+}
+
+/* Custom scrollbar for the chat example */
+.chat-example::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-example::-webkit-scrollbar-track {
+    background: var(--bs-gray-900);
+    border-radius: 5px;
+}
+
+.chat-example::-webkit-scrollbar-thumb {
+    background: var(--bs-gray-700);
+    border-radius: 5px;
+}
+
+.chat-example::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-gray-600);
+}
+
+/* Conversation list scrolling */
+.conversation-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Custom card hover effect */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .server-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .dropdown-toggle {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}

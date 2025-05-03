@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord AI Bot</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-robot me-2"></i> Discord AI Bot
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">AI-Powered Discord Bot</h1>
+            <p class="lead">Enhance your Discord server with intelligent conversations and commands</p>
+            <div class="mt-4">
+                <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot" 
+                   class="btn btn-light btn-lg me-2">
+                    <i class="fab fa-discord me-2"></i> Add to Discord
+                </a>
+                <a href="/dashboard" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title">AI Conversations</h3>
+                            <p class="card-text">Engage in natural conversations with an intelligent AI that understands context and can provide helpful responses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-image fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title">Image Generation</h3>
+                            <p class="card-text">Generate custom images from text prompts using advanced AI technology.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title">Customizable Commands</h3>
+                            <p class="card-text">Access a variety of useful commands that can be customized to suit your server's needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3>Intelligent Conversations</h3>
+                    <p>Our bot uses OpenAI's advanced language models to understand and respond to messages in a natural, helpful way. Just mention the bot or use the AI command to start a conversation.</p>
+                    <h3 class="mt-4">Easy Integration</h3>
+                    <p>Adding the bot to your server takes just a few clicks. No complicated setup required - just invite the bot and start using it right away.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Example Conversation</h5>
+                            <div class="chat-example">
+                                <div class="message user-message">
+                                    <strong>User:</strong> @AI-Bot What's the capital of France?
+                                </div>
+                                <div class="message bot-message">
+                                    <strong>AI-Bot:</strong> The capital of France is Paris. It's also the largest city in France and one of the most visited cities in the world!
+                                </div>
+                                <div class="message user-message">
+                                    <strong>User:</strong> Tell me more about Paris
+                                </div>
+                                <div class="message bot-message">
+                                    <strong>AI-Bot:</strong> Paris is known as the "City of Light" and is famous for landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. It's a global center for art, fashion, cuisine, and culture. The city is divided by the Seine River and consists of 20 arrondissements (districts).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Commands</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <h5 class="mb-1"><code>!ai [message]</code></h5>
+                            <p class="mb-1">Get an AI-powered response to your message</p>
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1"><code>!image [prompt]</code></h5>
+                            <p class="mb-1">Generate an image based on your text prompt</p>
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1"><code>!help</code></h5>
+                            <p class="mb-1">See all available commands and how to use them</p>
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1"><code>!info</code></h5>
+                            <p class="mb-1">Get information about the bot and its status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="mb-4">Ready to enhance your Discord server?</h2>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot" 
+               class="btn btn-light btn-lg">
+                <i class="fab fa-discord me-2"></i> Add Bot to Server
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Discord AI Bot</h5>
+                    <p>An intelligent AI-powered bot for your Discord server.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white">Home</a></li>
+                        <li><a href="/dashboard" class="text-white">Dashboard</a></li>
+                        <li><a href="/login" class="text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-discord fa-lg"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">&copy; 2023 Discord AI Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
